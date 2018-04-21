@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Chris\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test --watchAll
+  C:\Program Files\nodejs\node.exe C:\Users\Chris\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build:prod
 
 PATH: 
-  C:\Program Files\cmder\bin;C:\Program Files\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Program Files\cmder\vendor\conemu-maximus5;C:\Program Files\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Broadcom\Broadcom 802.11;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\ATI TECHNOLOGIES\ATI.ACE\CORE-STATIC;C:\PROGRAM FILES\SUBLIME TEXT 3;C:\XAMPP\PHP;C:\PROGRAMDATA\COMPOSERSETUP\BIN;c:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Chris\AppData\Roaming\Composer\vendor\bin;C:\Users\Chris\AppData\Roaming\npm;C:\Program Files\PostgreSQL\9.6\bin;C:\Program Files\PostgreSQL\9.6\lib;C:\Program Files\Heroku\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;C:\Program Files\cmder\
+  C:\Program Files\cmder\bin;C:\Program Files\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Program Files\cmder\vendor\conemu-maximus5;C:\Program Files\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Broadcom\Broadcom 802.11;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0;C:\PROGRAM FILES\ATI TECHNOLOGIES\ATI.ACE\CORE-STATIC;C:\PROGRAM FILES\SUBLIME TEXT 3;C:\XAMPP\PHP;C:\PROGRAMDATA\COMPOSERSETUP\BIN;C:\Program Files\WIDCOMM\Bluetooth Software;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\Chris\AppData\Roaming\Composer\vendor\bin;C:\Users\Chris\AppData\Roaming\npm;C:\Program Files\PostgreSQL\9.6\bin;C:\Program Files\PostgreSQL\9.6\lib;C:\Program Files\Heroku\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;C:\Program Files\cmder
 
 Yarn version: 
   1.5.1
@@ -22,7 +22,8 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "serve": "live-server public/",
-      "build": "webpack",
+      "build:dev": "webpack",
+      "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
       "test": "jest --config=jest.config.json"
     },
@@ -38,6 +39,7 @@ npm manifest:
       "enzyme": "^3.0.0",
       "enzyme-adapter-react-16": "^1.0.0",
       "enzyme-to-json": "^3.0.1",
+      "extract-text-webpack-plugin": "^3.0.0",
       "jest": "^22.4.3",
       "live-server": "^1.2.0",
       "moment": "^2.22.0",
@@ -693,7 +695,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c jest --config=jest.config.json --watchAll
+  Arguments: /d /s /c webpack -p --env production
   Directory: C:\Users\Chris\Desktop\react-course-projects\expensify-app
   Output:
   
